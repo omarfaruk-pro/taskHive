@@ -12,6 +12,8 @@ import UpdateTask from "../pages/UpdateTask";
 import PrivateRoute from "../private/PrivateRoute";
 import Loading from "../component/Loading";
 import NotFound from "../pages/NotFound";
+import DashBoardLayout from "../layouts/DashBoardLayout";
+import Overview from "../pages/Overview";
 
 export const router = createBrowserRouter([
     {
@@ -24,21 +26,14 @@ export const router = createBrowserRouter([
                 loader: ()=>fetch('https://taskhiveserver.vercel.app/homeTasks'),
                 HydrateFallback: Loading
             },
-            {
-                path: 'add-task',
-                element: <PrivateRoute><AddTask></AddTask></PrivateRoute>
-            },
+           
             {
                 path: 'browse-task',
                 Component: BrowseTask
             },
             {
-                path: 'my-posted-task',
-                element: <PrivateRoute><MyPostedTask></MyPostedTask></PrivateRoute>
-            },
-            {
                 path:'task-details/:id',
-                element: <PrivateRoute><TaskDetails></TaskDetails></PrivateRoute>,
+                element: <TaskDetails></TaskDetails>,
                 loader: ({params})=>fetch(`https://taskhiveserver.vercel.app/tasks/${params.id}`),
                 HydrateFallback: Loading
             },
@@ -55,6 +50,24 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 Component: Register
+            }
+        ]
+    },
+    {
+        path:'dashboard',
+        Component: DashBoardLayout,
+        children: [
+            {
+                index: true,
+                Component: Overview
+            },
+             {
+                path: 'my-posted-task',
+                element: <PrivateRoute><MyPostedTask></MyPostedTask></PrivateRoute>
+            },
+             {
+                path: 'add-task',
+                element: <PrivateRoute><AddTask></AddTask></PrivateRoute>
             }
         ]
     },
