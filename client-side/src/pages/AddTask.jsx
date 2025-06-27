@@ -50,12 +50,12 @@ export default function AddTask() {
   }
   return (
     <>
-      <section className="py-20 px-5">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-center text-4xl font-extrabold pb-5">Add a task</h2>
+      <section className="">
+        <div className="">
+          <h2 className=" text-3xl font-bold pb-5">Add a task</h2>
           <form
             onSubmit={handleAddTask}
-            className="max-w-xl mx-auto p-6 bg-gray-900 dark:bg-gray-100 shadow-md rounded-lg space-y-6 text-white dark:text-gray-800"
+            className=" p-6 bg-gray-900 dark:bg-gray-100 shadow-md rounded-lg space-y-6 text-white dark:text-gray-800"
           >
             <div>
               <label className="block text-sm font-medium">User Name</label>

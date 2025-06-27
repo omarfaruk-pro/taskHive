@@ -9,11 +9,11 @@ export default function DashBoardLayout() {
     return (
         <>
             <Header></Header>
-            <div className="flex max-w-7xl mx-auto min-h-[55dvh] gap-10 mt-5">
-                <div className="w-full max-w-80">
-                    <aside className=" bg-gray-900 h-full dark:bg-gray-200">
-                        <nav className="flex flex-col gap-2 p-4 h-full">
-                            <NavLink to="/dashboard" className={navLinkClasses}>
+            <div className="flex max-w-7xl mx-auto min-h-[55dvh] gap-10 py-5">
+                <div className="w-full max-w-80 bg-gray-900 dark:bg-gray-200 rounded-t-md">
+                    <aside className="sticky top-0">
+                        <nav className="d-nav flex flex-col gap-4 p-4 h-full">
+                            <NavLink to="/dashboard/overview" className={navLinkClasses}>
                                 <FaHome className="text-lg" />
                                 <span>Overview</span>
                             </NavLink>

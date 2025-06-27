@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
         Component: DashBoardLayout,
         children: [
             {
-                index: true,
+                path: 'overview',
                 Component: Overview
             },
              {

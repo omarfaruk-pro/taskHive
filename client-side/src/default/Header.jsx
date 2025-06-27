@@ -30,9 +30,14 @@ export default function Header() {
                             <div className='text-right lg:hidden'><button className='text-3xl -mr-4 -mt-4 p-4' onClick={() =>{setMenu(!menu)}}><HiMiniXMark /></button></div>
                             <ul className='flex flex-col lg:flex-row gap-10 lg:gap-2  main-menu'>
                                 <li><NavLink className='py-2 px-5 rounded-md' to='/'>Home</NavLink></li>
-                                <li><NavLink className='py-2 px-5 rounded-md' to='/add-task'>Add Task</NavLink></li>
                                 <li><NavLink className='py-2 px-5 rounded-md' to='/browse-task'>Browse Task</NavLink></li>
-                                <li><NavLink className='py-2 px-5 rounded-md' to='/my-posted-task'>My Posted Task</NavLink></li>
+                                {
+                                    user && (
+                                        <>
+                                            <li><NavLink className='py-2 px-5 rounded-md' to='/dashboard/overview'> Dashboard</NavLink></li>
+                                        </>
+                                    )
+                                }
                             </ul>
                         </nav>
                         {
